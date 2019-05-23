@@ -1,0 +1,18 @@
+<div class="menu">
+	<img src="../../assets/logo.jpg" width="100" height="100" class="d-inline-block align-middle" alt="Association Les ForgeMondes" />
+	<span class="menu-text">L'Arcane des Épées - Interface interne</span>
+
+	<button mat-button>Accueil</button>
+
+	<button mat-button [matMenuTriggerFor]="adherents">PNJ</button>
+	<mat-menu #adherents="matMenu">
+		<button mat-menu-item>Liste des PNJ</button>
+		<button mat-menu-item>Générer un PNJ</button>
+	</mat-menu>
+
+	<button mat-button [matMenuTriggerFor]="tresorerie">Économie et fiefs</button>
+	<mat-menu #tresorerie="matMenu">
+		<button mat-menu-item>Liste des fiefs</button>
+		<button mat-menu-item>Générer un fief</button>
+	</mat-menu>
+</div>

@@ -1,0 +1,31 @@
+.menu {
+	font:Verdana, Geneva, sans-serif;
+	font-size:18px;
+	text-align:left;
+	height:100px;
+	vertical-align:middle;
+	line-height: 100px;
+	padding-left: 10px;
+	padding-top: 10px;
+	margin-bottom: 50px;
+}
+
+.menu-text {
+	margin-right: 50px;
+}
+
+.valid {
+	color: #248d5f;
+}
+
+.valid:hover {
+	color: #31bb7f;
+}
+
+.error {
+	color: #922e2e;
+}
+
+.error:hover {
+	color: #c23838;
+}

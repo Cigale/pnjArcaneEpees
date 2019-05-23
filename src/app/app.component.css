@@ -1,0 +1,8 @@
+button.spaced {
+	margin-right: 30px !important;
+}
+
+button.big {
+	min-width: 100px;
+	min-height: 100px;
+}
