@@ -1,0 +1,31 @@
+<div id="content">
+	<h1>Génération d'un nouveau PNJ</h1>
+	<form name="genpnj" method="POST" action="#">
+		<fieldset>
+			<legend>Informations de base</legend>
+			<mat-form-field>
+				<input matInput name="name" [(ngModel)]="name" placeholder="Nom du personnage" required>
+			</mat-form-field><br>
+			<mat-form-field>
+				<mat-select name="pnjXp" [(value)]="pnjXp" (ngModelChange)="updateCost($event)" required>
+					<mat-option>-- Faites un choix --</mat-option>
+					<mat-option value="apprenti">Apprenti</mat-option>
+					<mat-option value="debutant">Débutant</mat-option>
+					<mat-option value="confirme">Confirmé</mat-option>
+					<mat-option value="expert">Expert</mat-option>
+					<mat-option value="maitre">Maître</mat-option>
+				</mat-select>
+				<mat-label>Niveau d'expérience du personnage</mat-label>
+			</mat-form-field>
+		</fieldset>
+		<fieldset>
+			<legend>Résumé des informations</legend>
+			<b>Nom</b> : {{name}}<br>
+			<b>Niveau d'expérience</b> : {{pnjXp}}<br>
+			<b>Cout total</b> : {{cost}}
+		</fieldset>
+	</form>
+
+
+	
+</div>

@@ -1,2 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* Elements */
+
+fieldset {
+	width: 600px;
+	margin: auto;
+}
+
+h1 {
+	margin-bottom: 50px;
+}
+
+/* ID */
+
+#content {
+	padding-left: 10px;
+	margin: auto;
+	text-align: center;
+}
+
+/* Classes */
+
+fieldset .mat-form-field-infix {
+	width: 250px !important;
+}
+
+.cadre {
+	height: 100px;
+	width: 200px;
+	border: 1px solid #aaaaaa;
+	border-radius: 10px;
+	margin: auto;
+	display: inline-block;
+	background-color: #5d937c;
+	color: #fff;
+	font-weight: bold;
+	padding-top: 10px;
+}
+
+
+.cadre:hover {
+	background-color: #89c2a9;
+	cursor: pointer;
+}
+
+.spaced {
+	margin-right: 50px;
+}
+
+.big {
+	font-size: 50px;
+}
