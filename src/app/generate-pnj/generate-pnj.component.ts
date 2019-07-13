@@ -17,14 +17,16 @@ export class GeneratePnjComponent implements OnInit {
 	competence_3 = new Competence("");
 	name: string;
 	cost: number;
-	time: number;
-
+	time: string;
+	zone: string;
+	methode: string;
   constructor() {
 		
 	}
 
   ngOnInit() {
 		this.cost = 0;
+		this.time = "0";
 
 		this.competences = new Array<Competence>();
 

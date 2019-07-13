@@ -3,9 +3,26 @@
 	<form name="genpnj" method="POST" action="#">
 		<fieldset>
 			<legend>Informations de base</legend>
+			<b>Zone de recherche</b><br>
 			<mat-form-field>
-				<input matInput name="name" [(ngModel)]="name" placeholder="Nom du personnage">
-			</mat-form-field><br>
+				<mat-select name="zone" [(ngModel)]="zone">
+					<mat-option value="Ville">Ville</mat-option>
+					<mat-option value="Région">Région</mat-option>
+					<mat-option value="Pays">Pays</mat-option>
+					<mat-option value="Monde">Monde</mat-option>
+				</mat-select>
+				<mat-label>Zone</mat-label>
+			</mat-form-field>
+			<br>
+			<b>Méthode de recherche</b><br>
+			<mat-form-field>
+				<mat-select name="methode" [(ngModel)]="methode">
+					<mat-option value="Publique">Publique</mat-option>
+					<mat-option value="Secrète">Secrète</mat-option>
+				</mat-select>
+				<mat-label>Methode</mat-label>
+			</mat-form-field>
+			<br>
 			<b>Compétence 1</b><br>
 			<mat-form-field>
 				<mat-select name="competence_1" [(ngModel)]="competence_1" (ngModelChange)="selectCompetence($competence_1)">
@@ -86,7 +103,8 @@
 		</fieldset>
 		<fieldset>
 			<legend>Résumé des informations</legend>
-			<b>Nom</b> : {{name}}<br>
+			<b>Zone de recherche</b> : {{zone}}<br>
+			<b>Méthode de recherche</b> : {{methode}}<br>
 			<br>
 			<h3><b>Compétence 1 :</b> {{competence_1.name}}</h3>
 			<b>Maîtrise :</b> {{competence_1.mastery}}<br>
@@ -100,8 +118,8 @@
 			<b>Maîtrise :</b> {{competence_3.mastery}}<br>
 			<b>Spécialité 1 :</b> {{competence_3.specialisation_1}}<br>
 			<b>Spécialité 2 :</b> {{competence_3.specialisation_2}}<br><br>
-			<h3><b>Cout total</b> : {{cost}}</h3> thunes non déterminées
-			<h3><b>Temps nécessaire</b> : {{time}}</h3> unités de temps non déterminées
+			<h3><b>Cout total</b> : {{cost}} <small>thunes non déterminées</small></h3>
+			<h3><b>Temps nécessaire</b> : {{time}}<small> unités de temps non déterminées</small></h3>
 		</fieldset>
 	</form>
 
