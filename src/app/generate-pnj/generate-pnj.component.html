@@ -4,25 +4,104 @@
 		<fieldset>
 			<legend>Informations de base</legend>
 			<mat-form-field>
-				<input matInput name="name" [(ngModel)]="name" placeholder="Nom du personnage" required>
+				<input matInput name="name" [(ngModel)]="name" placeholder="Nom du personnage">
 			</mat-form-field><br>
+			<b>Compétence 1</b><br>
 			<mat-form-field>
-				<mat-select name="pnjXp" [(value)]="pnjXp" (ngModelChange)="updateCost($event)" required>
-					<mat-option>-- Faites un choix --</mat-option>
-					<mat-option value="apprenti">Apprenti</mat-option>
-					<mat-option value="debutant">Débutant</mat-option>
-					<mat-option value="confirme">Confirmé</mat-option>
-					<mat-option value="expert">Expert</mat-option>
-					<mat-option value="maitre">Maître</mat-option>
+				<mat-select name="competence_1" [(ngModel)]="competence_1" (ngModelChange)="selectCompetence($competence_1)">
+					<mat-option *ngFor="let competence of competences" [disabled]="competence.selected" [value]="competence">{{competence.name}}</mat-option>
 				</mat-select>
-				<mat-label>Niveau d'expérience du personnage</mat-label>
+				<mat-label>Compétence</mat-label>
 			</mat-form-field>
+			<mat-form-field>
+				<mat-select name="competence_1_mastery" [(ngModel)]="competence_1.mastery">
+					<mat-option *ngFor="let mastery of masteries" [value]="mastery">{{mastery}}</mat-option>
+				</mat-select>
+				<mat-label>Maîtrise</mat-label>
+			</mat-form-field>
+			<mat-form-field>
+				<mat-select name="competence_1_spe_1" [(ngModel)]="competence_1.specialisation_1">
+					<mat-option *ngFor="let specialisation of competence_1.specialisation_list" [value]="specialisation">{{specialisation}}</mat-option>
+				</mat-select>
+				<mat-label>Spécialisation 1</mat-label>
+			</mat-form-field>
+			<mat-form-field>
+				<mat-select name="competence_1_spe_2" [(ngModel)]="competence_1.specialisation_2">
+					<mat-option *ngFor="let specialisation of competence_1.specialisation_list" [value]="specialisation">{{specialisation}}</mat-option>
+				</mat-select>
+				<mat-label>Spécialisation 2</mat-label>
+			</mat-form-field><br>
+
+			<b>Compétence 2</b><br>
+			<mat-form-field>
+				<mat-select name="competence_2" [(ngModel)]="competence_2" (ngModelChange)="selectCompetence(competence_2)">
+					<mat-option *ngFor="let competence of competences" [disabled]="competence.selected" [value]="competence">{{competence.name}}</mat-option>
+				</mat-select>
+				<mat-label>Compétence</mat-label>
+			</mat-form-field>
+			<mat-form-field>
+				<mat-select name="competence_2_mastery" [(ngModel)]="competence_2.mastery">
+					<mat-option *ngFor="let mastery of masteries" [value]="mastery">{{mastery}}</mat-option>
+				</mat-select>
+				<mat-label>Maîtrise</mat-label>
+			</mat-form-field>
+			<mat-form-field>
+				<mat-select name="competence_2_spe_1" [(ngModel)]="competence_2.specialisation_1">
+					<mat-option *ngFor="let specialisation of competence_2.specialisation_list" [value]="specialisation">{{specialisation}}</mat-option>
+				</mat-select>
+				<mat-label>Spécialisation 1</mat-label>
+			</mat-form-field>
+			<mat-form-field>
+				<mat-select name="competence_2_spe_2" [(ngModel)]="competence_2.specialisation_2">
+					<mat-option *ngFor="let specialisation of competence_1.specialisation_list" [value]="specialisation">{{specialisation}}</mat-option>
+				</mat-select>
+				<mat-label>Spécialisation 2</mat-label>
+			</mat-form-field><br>
+
+			<b>Compétence 3</b><br>
+			<mat-form-field>
+				<mat-select name="competence_3" [(ngModel)]="competence_3" (ngModelChange)="selectCompetence(competence_3)">
+					<mat-option *ngFor="let competence of competences" [disabled]="competence.selected" [value]="competence">{{competence.name}}</mat-option>
+				</mat-select>
+				<mat-label>Compétence</mat-label>
+			</mat-form-field>
+			<mat-form-field>
+				<mat-select name="competence_3_mastery" [(ngModel)]="competence_3.mastery">
+					<mat-option *ngFor="let mastery of masteries" [value]="mastery">{{mastery}}</mat-option>
+				</mat-select>
+				<mat-label>Maîtrise</mat-label>
+			</mat-form-field>
+			<mat-form-field>
+				<mat-select name="competence_3_spe_1" [(ngModel)]="competence_3.specialisation_1">
+					<mat-option *ngFor="let specialisation of competence_3.specialisation_list" [value]="specialisation">{{specialisation}}</mat-option>
+				</mat-select>
+				<mat-label>Spécialisation 1</mat-label>
+			</mat-form-field>
+			<mat-form-field>
+				<mat-select name="competence_3_spe_2" [(ngModel)]="competence_3.specialisation_2">
+					<mat-option *ngFor="let specialisation of competence_1.specialisation_list" [value]="specialisation">{{specialisation}}</mat-option>
+				</mat-select>
+				<mat-label>Spécialisation 2</mat-label>
+			</mat-form-field><br>
 		</fieldset>
 		<fieldset>
 			<legend>Résumé des informations</legend>
 			<b>Nom</b> : {{name}}<br>
-			<b>Niveau d'expérience</b> : {{pnjXp}}<br>
-			<b>Cout total</b> : {{cost}}
+			<br>
+			<h3><b>Compétence 1 :</b> {{competence_1.name}}</h3>
+			<b>Maîtrise :</b> {{competence_1.mastery}}<br>
+			<b>Spécialité 1 :</b> {{competence_1.specialisation_1}}<br>
+			<b>Spécialité 2 :</b> {{competence_1.specialisation_2}}<br>
+			<h3><b>Compétence 2 :</b> {{competence_2.name}}</h3>
+			<b>Maîtrise :</b> {{competence_2.mastery}}<br>
+			<b>Spécialité 1 :</b> {{competence_2.specialisation_1}}<br>
+			<b>Spécialité 2 :</b> {{competence_2.specialisation_2}}<br>
+			<h3><b>Compétence 3 :</b> {{competence_3.name}}</h3>
+			<b>Maîtrise :</b> {{competence_3.mastery}}<br>
+			<b>Spécialité 1 :</b> {{competence_3.specialisation_1}}<br>
+			<b>Spécialité 2 :</b> {{competence_3.specialisation_2}}<br><br>
+			<h3><b>Cout total</b> : {{cost}}</h3> thunes non déterminées
+			<h3><b>Temps nécessaire</b> : {{time}}</h3> unités de temps non déterminées
 		</fieldset>
 	</form>
 
